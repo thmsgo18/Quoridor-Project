@@ -4,28 +4,27 @@
 
 Une implémentation Python du jeu de plateau Quoridor avec des adversaires IA de différents niveaux de difficulté.
 
-## 📋 Table des matières
+## Table des matières
 
 - [Projet Quoridor](#projet-quoridor)
-  - [📋 Table des matières](#-table-des-matières)
-  - [🎮 À propos](#-à-propos)
-  - [✨ Fonctionnalités](#-fonctionnalités)
-  - [🚀 Installation](#-installation)
+  - [Table des matières](#table-des-matières)
+  - [À propos](#à-propos)
+  - [Fonctionnalités](#fonctionnalités)
+  - [Installation](#installation)
     - [Prérequis](#prérequis)
     - [Dépendances](#dépendances)
     - [Cloner le dépôt](#cloner-le-dépôt)
-  - [🎯 Utilisation](#-utilisation)
+  - [Utilisation](#utilisation)
     - [Lancer une partie](#lancer-une-partie)
     - [Modes de jeu](#modes-de-jeu)
     - [Contrôles](#contrôles)
-  - [🤖 Niveaux de difficulté de l'IA](#-niveaux-de-difficulté-de-lia)
-  - [📁 Structure du projet](#-structure-du-projet)
+  - [Niveaux de difficulté de l'IA](#niveaux-de-difficulté-de-lia)
+  - [Structure du projet](#structure-du-projet)
     - [Composants clés](#composants-clés)
-  - [📊 Benchmarking](#-benchmarking)
-  - [👨‍💻 Auteur](#-auteur)
-  - [📄 Licence](#-licence)
+  - [Benchmarking](#benchmarking)
+  - [Auteur](#auteur)
 
-## 🎮 À propos
+## À propos
 
 Quoridor est un jeu de plateau stratégique où les joueurs tentent d'atteindre le côté opposé du plateau tout en utilisant des murs pour bloquer le chemin de leur adversaire. Cette implémentation propose :
 
@@ -35,7 +34,7 @@ Quoridor est un jeu de plateau stratégique où les joueurs tentent d'atteindre 
 - Des capacités de benchmarking IA vs IA
 - Une table de transposition pour un gameplay optimisé
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
 - **Humain vs Humain** : Deux joueurs sur le même ordinateur
 - **Humain vs IA** : Jouez contre l'ordinateur avec différents niveaux de difficulté
@@ -44,7 +43,7 @@ Quoridor est un jeu de plateau stratégique où les joueurs tentent d'atteindre 
 - **Benchmarking de performance** : Testez différentes configurations d'IA et analysez les résultats
 - **Recherche de chemin** : Algorithme de Dijkstra pour garantir que des chemins valides subsistent
 
-## 🚀 Installation
+## Installation
 
 ### Prérequis
 
@@ -66,7 +65,7 @@ git clone https://github.com/thmsgo18/Quoridor-Project.git
 cd Quoridor-Project
 ```
 
-## 🎯 Utilisation
+## Utilisation
 
 ### Lancer une partie
 
@@ -88,7 +87,7 @@ Au lancement, vous pouvez configurer :
 - Choisissez entre déplacer votre pion ou placer un mur
 - Entrez les coordonnées lorsque demandé
 
-## 🤖 Niveaux de difficulté de l'IA
+## Niveaux de difficulté de l'IA
 
 L'IA dispose de trois niveaux de difficulté avec différentes caractéristiques :
 
@@ -102,7 +101,7 @@ L'IA dispose de trois niveaux de difficulté avec différentes caractéristiques
 - **Epsilon** : Facteur d'aléatoire pour l'imprévisibilité
 - **Poids** : Paramètres heuristiques pour la prise de décision stratégique
 
-## 📁 Structure du projet
+## Structure du projet
 
 ```
 Quoridor-Project/
@@ -124,7 +123,7 @@ Quoridor-Project/
 - **Joueur.py** : Représentation du joueur et déplacements
 - **Mur.py** : Placement et validation des murs
 
-## 📊 Benchmarking
+## Benchmarking
 
 Exécutez des benchmarks IA vs IA pour analyser les performances :
 
@@ -138,15 +137,6 @@ Cela permettra de :
 - Créer des graphiques de visualisation avec matplotlib
 - Exporter les résultats en CSV et afficher des graphiques
 
-## 👨‍💻 Auteur
+## Auteur
 
-**Thomas**
-- GitHub : [@thmsgo18](https://github.com/thmsgo18)
-
-## 📄 Licence
-
-Ce projet est un projet académique réalisé dans le cadre du cursus universitaire (Licence 3, Semestre 2, cours d'IA).
-
----
-
-*Pour la version anglaise de ce README, cliquez [ici](README.md).*
+[Thomas Gourmelen](https://github.com/thmsgo18)

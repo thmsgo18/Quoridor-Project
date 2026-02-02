@@ -4,19 +4,27 @@
 
 A Python implementation of the Quoridor board game with AI opponents of varying difficulty levels.
 
-## 📋 Table of Contents
+## Table of Contents
 
-- [About](#about)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [AI Difficulty Levels](#ai-difficulty-levels)
-- [Project Structure](#project-structure)
-- [Benchmarking](#benchmarking)
-- [Author](#author)
-- [License](#license)
+- [Quoridor Project](#quoridor-project)
+  - [Table of Contents](#table-of-contents)
+  - [About](#about)
+  - [Features](#features)
+  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+    - [Dependencies](#dependencies)
+    - [Clone the Repository](#clone-the-repository)
+  - [Usage](#usage)
+    - [Start a Game](#start-a-game)
+    - [Game Modes](#game-modes)
+    - [Controls](#controls)
+  - [AI Difficulty Levels](#ai-difficulty-levels)
+  - [Project Structure](#project-structure)
+    - [Key Components](#key-components)
+  - [Benchmarking](#benchmarking)
+  - [Author](#author)
 
-## 🎮 About
+## About
 
 Quoridor is a strategic board game where players try to reach the opposite side of the board while using walls to block their opponent's path. This implementation features:
 
@@ -26,7 +34,7 @@ Quoridor is a strategic board game where players try to reach the opposite side 
 - AI vs AI benchmarking capabilities
 - Transposition table for optimized gameplay
 
-## ✨ Features
+## Features
 
 - **Human vs Human**: Two players on the same computer
 - **Human vs AI**: Play against the computer with different difficulty levels
@@ -35,7 +43,7 @@ Quoridor is a strategic board game where players try to reach the opposite side 
 - **Performance Benchmarking**: Test different AI configurations and analyze results
 - **Path Finding**: Dijkstra's algorithm to ensure valid paths remain
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -57,7 +65,7 @@ git clone https://github.com/thmsgo18/Quoridor-Project.git
 cd Quoridor-Project
 ```
 
-## 🎯 Usage
+## Usage
 
 ### Start a Game
 
@@ -79,7 +87,7 @@ When launching, you can configure:
 - Choose between moving your pawn or placing a wall
 - Enter coordinates when prompted
 
-## 🤖 AI Difficulty Levels
+## AI Difficulty Levels
 
 The AI has three difficulty levels with different characteristics:
 
@@ -93,7 +101,7 @@ The AI has three difficulty levels with different characteristics:
 - **Epsilon**: Randomness factor for unpredictability
 - **Weights**: Heuristic parameters for strategic decision-making
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Quoridor-Project/
@@ -115,7 +123,7 @@ Quoridor-Project/
 - **Joueur.py**: Player representation and movement
 - **Mur.py**: Wall placement and validation
 
-## 📊 Benchmarking
+## Benchmarking
 
 Run AI vs AI benchmarks to analyze performance:
 
@@ -129,15 +137,6 @@ This will:
 - Create visualization charts with matplotlib
 - Output results to CSV and display graphs
 
-## 👨‍💻 Author
+## Author
 
-**Thomas**
-- GitHub: [@thmsgo18](https://github.com/thmsgo18)
-
-## 📄 License
-
-This project is an academic project for university coursework (Licence 3, Semester 2, AI Course).
-
----
-
-*For the French version of this README, click [here](README.fr.md).*
+[Thomas Gourmelen](https://github.com/thmsgo18)
