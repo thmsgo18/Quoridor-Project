@@ -1,92 +1,143 @@
-# Projet-IA : Jeu Quoridor
+# Quoridor Project
 
-## Image du jeu Quoridor :
-![Image du jeu Quoridor](image-quoridor.jpg)
+[![fr](https://img.shields.io/badge/lang-fr-blue.svg)](README.fr.md)
 
-## Comment exécuter le jeu
+A Python implementation of the Quoridor board game with AI opponents of varying difficulty levels.
 
-### Prérequis
-- Python 3.6 ou supérieur
+## 📋 Table of Contents
 
-### Installation
-Aucune installation de dépendance n'est nécessaire. Le jeu utilise uniquement des bibliothèques standards de Python.
+- [About](#about)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [AI Difficulty Levels](#ai-difficulty-levels)
+- [Project Structure](#project-structure)
+- [Benchmarking](#benchmarking)
+- [Author](#author)
+- [License](#license)
 
-### Exécution du jeu
-Pour lancer le jeu, exécutez simplement le fichier `Quoridor.py` :
+## 🎮 About
+
+Quoridor is a strategic board game where players try to reach the opposite side of the board while using walls to block their opponent's path. This implementation features:
+
+- A complete game engine with rule validation
+- AI opponents using minimax algorithm with alpha-beta pruning
+- Three difficulty levels (easy, medium, hard)
+- AI vs AI benchmarking capabilities
+- Transposition table for optimized gameplay
+
+## ✨ Features
+
+- **Human vs Human**: Two players on the same computer
+- **Human vs AI**: Play against the computer with different difficulty levels
+- **AI vs AI**: Watch two AI opponents battle each other
+- **Intelligent AI**: Uses heuristics for movement optimization and strategic wall placement
+- **Performance Benchmarking**: Test different AI configurations and analyze results
+- **Path Finding**: Dijkstra's algorithm to ensure valid paths remain
+
+## 🚀 Installation
+
+### Prerequisites
+
+- Python 3.8 or higher
+- pip (Python package manager)
+
+### Dependencies
+
+Install the required packages:
 
 ```bash
-python Quoridor.py
+pip install numpy matplotlib pandas seaborn
 ```
 
-### Comment jouer
+### Clone the Repository
 
-1. Au lancement du jeu, choisissez un mode de jeu :
-   - 1 : Humain contre Humain
-   - 2 : Humain contre IA
-   - 3 : IA contre IA
+```bash
+git clone https://github.com/thmsgo18/Quoridor-Project.git
+cd Quoridor-Project
+```
 
-2. Si vous choisissez un mode avec IA, sélectionnez le niveau de difficulté :
-   - 1 : Facile
-   - 2 : Moyen
-   - 3 : Difficile
+## 🎯 Usage
 
-3. À chaque tour, vous avez trois options :
-   - `d` : Déplacer votre pion
-     - Choisissez ensuite la direction avec `h` (haut), `b` (bas), `g` (gauche), `d` (droite)
-   - `m` : Placer un mur
-     - Entrez les coordonnées `x` et `y` (nombres impairs)
-     - Choisissez l'orientation avec `h` (horizontal) ou `v` (vertical)
-   - `q` : Quitter la partie
+### Start a Game
 
-4. Le plateau de jeu est affiché avec les coordonnées. Les joueurs sont représentés par "1" et "2", les cases vides par "o" et les murs par "█".
+Run the main game file:
 
-5. Le premier joueur qui atteint la ligne opposée à sa ligne de départ gagne la partie.
+```bash
+python3 Quoridor.py
+```
 
-## Présentation du jeu Quoridor :
+### Game Modes
 
-### Élément du jeu :
+When launching, you can configure:
+- Player 1 and Player 2 as Human or AI
+- AI difficulty level (easy, medium, hard)
 
-    - Nombre de joueurs : 2.
-    - Plateau de 81 cases ( 9 x 9 ).
-    - 20 barrières.
+### Controls
 
-### Règles du jeux :
+- Follow the on-screen prompts to make moves
+- Choose between moving your pawn or placing a wall
+- Enter coordinates when prompted
 
-- ### But :
+## 🤖 AI Difficulty Levels
 
-    Atteindre le premier la ligne opposée à sa ligne de départ.
-        Le problème : votre adversaire pose des barrières pour vous ralentir !
-        Rassurez-vous : il doit vous laisser au moins un passage libre. Mais qui aura le chemin le plus court ?
+The AI has three difficulty levels with different characteristics:
 
-- ### Comment :
+| Level | Depth | Epsilon | Advance Weight | Block Weight | Wall Weight |
+|-------|-------|---------|----------------|--------------|-------------|
+| **Easy** | 1 | 0.4 | 1.0 | 0.5 | 0.2 |
+| **Medium** | 2 | 0.2 | 1.2 | 0.8 | 0.3 |
+| **Hard** | 3 | 0.1 | 1.5 | 1.0 | 0.4 |
 
-    Les joueurs se partagent les barrières et chacun pose son pion au centre de sa ligne de départ. A tour de rôle, chacun déplace son pion d'une case, ou pose une barrière afin de ralentir l'adversaire. Les pions doivent contourner les barrières, qui créent un labyrinthe dont il faut sortir très vite !
+- **Depth**: Search depth in the game tree (minimax)
+- **Epsilon**: Randomness factor for unpredictability
+- **Weights**: Heuristic parameters for strategic decision-making
 
-- ### Début d'une partie :
+## 📁 Project Structure
 
-    Chaque joueur pose son pion au centre de sa ligne de départ (la première devant lui). Les 2 joueurs se font face. Un tirage au sort détermine qui commence.
-    Chaque joueur possède 10 barrières.
+```
+Quoridor-Project/
+├── Quoridor.py           # Main game file
+├── GameState.py          # AI logic and game state management
+├── benchmark_ia.py       # AI benchmarking tool
+├── Object/
+│   ├── Joueur.py        # Player class
+│   ├── Mur.py           # Wall class
+│   └── Plateau.py       # Board class
+└── README.md            # This file
+```
 
-- ### Déplacement des pions :
+### Key Components
 
-    Les pions se déplacent d’une seule case, horizontalement ou verticalement, en avant ou en arrière, mais jamais en diagonale. Les barrières doivent être contournées et non sautées.
+- **Quoridor.py**: Main game loop and user interface
+- **GameState.py**: AI implementation with minimax, alpha-beta pruning, and heuristics
+- **Plateau.py**: Game board management and validation
+- **Joueur.py**: Player representation and movement
+- **Mur.py**: Wall placement and validation
 
-- ### Face à face :
+## 📊 Benchmarking
 
-    Quand les 2 pions se retrouvent en vis-à-vis sur 2 cases voisines non séparées par une barrière, le joueur dont c’est le tour peut sauter son adversaire. Si une barrière est située derrière le pion sauté, alors le pion sauteur devra être posé sur n'importe quelle autre case adjacente au pion sauté.
+Run AI vs AI benchmarks to analyze performance:
 
-- ### Pose des barrières :
+```bash
+python3 benchmark_ia.py
+```
 
-    - Les barrières doivent être posées exactement entre 2 blocs de 2 cases. Elles ne peuvent pas se chevaucher. Une fois posées, elles ne peuvent plus être retirées ni bougées de la partie.
+This will:
+- Run 50 games for each difficulty combination
+- Generate statistics on win rates and game duration
+- Create visualization charts with matplotlib
+- Output results to CSV and display graphs
 
-    - La pose des barrières a pour but de se créer son propre chemin ou de ralentir l’adversaire, mais il est interdit de lui fermer totalement l’accès à sa ligne d'arrivée : il faut toujours lui laisser une solution.
+## 👨‍💻 Author
 
-    - Lorsqu’un joueur n’a plus de barrières, il est obligé de déplacer son pion.
+**Thomas**
+- GitHub: [@thmsgo18](https://github.com/thmsgo18)
 
-- ### Fin de la partie :
+## 📄 License
 
-    Le premier joueur qui atteint une des 9 cases de la ligne opposée à sa ligne de départ gagne la partie.
+This project is an academic project for university coursework (Licence 3, Semester 2, AI Course).
 
-### Présentation en vidéo du jeu Quoridor:
+---
 
-[Regarder la vidéo sur YouTube](https://youtu.be/cwsZZGmiFQM)
+*For the French version of this README, click [here](README.fr.md).*
